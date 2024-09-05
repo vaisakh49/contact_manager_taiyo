@@ -31,10 +31,6 @@ const router = createBrowserRouter([
       },
     ],
   },
-  // {
-  //   path: "*",
-  //   element: <PageNotFound />,
-  // },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
