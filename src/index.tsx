@@ -6,20 +6,22 @@ import {
   createBrowserRouter,
 } from "react-router-dom";
 
-import "./index.scss";
+import "./index.css";
 import { Contacts } from "./pages/contacts/Contacts";
 import { ChartAndMap } from "./pages/chart-and-map/ChartAndMap";
 import { AppWrapper } from "./components/AppWrapper";
 import { PageNotFound } from "./components/PageNotFound";
+import { Provider } from "react-redux";
+import { store } from "./store/store";
 
 const router = createBrowserRouter([
   {
-    path: "/*",
+    // path: "/*",
     element: <AppWrapper />,
     children: [
       {
         index: true,
-        element: <Navigate to="/domains" />,
+        element: <Navigate to="/contacts" />,
       },
       { path: "contacts", element: <Contacts /> },
       { path: "chartandmaps", element: <ChartAndMap /> },
@@ -29,14 +31,16 @@ const router = createBrowserRouter([
       },
     ],
   },
-  {
-    path: "*",
-    element: <PageNotFound />,
-  },
+  // {
+  //   path: "*",
+  //   element: <PageNotFound />,
+  // },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );
