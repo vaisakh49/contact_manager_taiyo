@@ -7,8 +7,8 @@ import {
 } from "react-router-dom";
 
 import "./index.css";
-import { Contacts } from "./pages/contacts/Contacts";
-import { ChartAndMap } from "./pages/chart-and-map/ChartAndMap";
+import { Contacts } from "./features/contacts/Contacts";
+import { ChartAndMap } from "./features/charts-and-maps/ChartAndMap";
 import { AppWrapper } from "./components/AppWrapper";
 import { PageNotFound } from "./components/PageNotFound";
 import { Provider } from "react-redux";
